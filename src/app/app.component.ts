@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {DataService} from "./data.service";
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-root',
@@ -18,5 +19,11 @@ export class AppComponent {
     // Access the Data Service's getUsers() method we defined
     this._dataService.getUsers()
       .subscribe(res => this.users = res);
+  }
+
+  getName(f: NgForm){
+
+    const name = f.value.name;
+
   }
 }

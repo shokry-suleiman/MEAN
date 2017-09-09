@@ -1,5 +1,28 @@
-<h1>Our MongoDB is Working!</h1>
+<div class="container">
+  <div class="row">
 
-<ul>
-  <li *ngFor="let user of users">{{ user.name }}</li>
-</ul>
+    <form (ngSubmit)="getName(f)" #f="ngForm" >
+
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" name="name" id="name" aria-describedby="name" placeholder="enter name" ngModel>
+        <small id="smallname" class="form-text text-muted">please enter your name.</small>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+
+    </form>
+
+  </div>
+
+  <br>
+
+  <div class="row">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor=" let user of users"> {{ user.name }}</li>
+    </ul>
+  </div>
+
+</div>
+
+

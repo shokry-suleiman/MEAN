@@ -16,5 +16,7 @@ export class DataService {
       .map(result => this.result = result.json().data);
   }
 
-  
+  addUser(){
+
+  }
 }

@@ -42,11 +42,13 @@ router.get('/users', (req, res) => {
 });
 });
 
-// Get users
+// Add users
 router.get('/addUser', (req, res) => {
   connection((db) => {
   db.collection('users')
-    .insertOne({"name":"shokry suleiman"})
+    .insertOne({"name":"shokry suleiman"}).then((data) => {
+
+  })
 .catch((err) => {
     sendError(err, res);
 });
