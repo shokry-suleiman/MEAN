@@ -42,4 +42,15 @@ router.get('/users', (req, res) => {
 });
 });
 
+// Get users
+router.get('/addUser', (req, res) => {
+  connection((db) => {
+  db.collection('users')
+    .insertOne({"name":"shokry suleiman"})
+.catch((err) => {
+    sendError(err, res);
+});
+});
+});
+
 module.exports = router;
